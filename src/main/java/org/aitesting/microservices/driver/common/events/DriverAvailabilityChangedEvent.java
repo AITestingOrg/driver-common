@@ -6,9 +6,12 @@ import org.aist.libs.eventsourcing.configuration.eventstore.Name;
 import java.util.UUID;
 
 @Name("DriverDisabledEvent")
-public class DriverDisabledEvent extends Event {
+public class DriverAvailabilityChangedEvent extends Event {
 
-    public DriverDisabledEvent(UUID id) {
+    private boolean available;
+
+    public DriverAvailabilityChangedEvent(UUID id, boolean available) {
         super(id);
+        this.available = available;
     }
 }
